@@ -11,7 +11,7 @@ function About({ setModal }) {
       }}
     >
       <div className=" w-[90%] lg:w-[50%]  h-[22rem] flex flex-col">
-        <div className=" w-full flex items-center justify-center relative p-[40px] lg:px-[40px] bg-white ">
+        <div className=" my-[10px] lg:my-[30px] w-full flex items-center justify-center relative p-[40px] lg:px-[40px] bg-white ">
           {/* <img src={aboutBg} className=" w-full " /> */}
 
           <h1 className=" text-[1rem] font-bold ">
@@ -21,7 +21,7 @@ function About({ setModal }) {
             the ultimate quiz champion? Let the games begin!
           </h1>
         </div>
-        <br />
+
         <div className=" w-full flex justify-end items-end">
           <div className="w-[150px]">
             <Button3 title="Okay" onFunction={() => setModal(false)} />
