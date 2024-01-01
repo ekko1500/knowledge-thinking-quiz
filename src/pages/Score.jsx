@@ -65,9 +65,9 @@ function Score() {
   };
 
   const onPlayAgain = () => {
-    // setScore(0);
-    // navigate(`/playing/${category}`);
-    navigate("/");
+    setScore(0);
+    navigate(`/category`);
+    // navigate("/");
   };
 
   useEffect(() => {}, []);
@@ -133,7 +133,7 @@ function Score() {
 
         <br />
         {/* button bar */}
-        <div className=" flex items-center justify-between w-[90%] lg:w-[70%] ">
+        <div className=" flex items-center justify-between w-[90%] lg:w-[70%] z-40 ">
           {keys.map((key, index) => (
             // <div
             //   key={index}

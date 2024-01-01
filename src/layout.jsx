@@ -21,10 +21,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
   },
-  {
-    path: "/quizs/:id",
-    element: <Question />,
-  },
+  // {
+  //   path: "/quizs/:id",
+  //   element: <Question />,
+  // },
   {
     path: "/score",
     element: <Score />,
@@ -33,14 +33,14 @@ const router = createBrowserRouter([
     path: "/playing/:category",
     element: <Playing />,
   },
-  {
-    path: "/confirm",
-    element: <CounterLarge />,
-  },
-  {
-    path: "/countdown",
-    element: <RemainingTime />,
-  },
+  // {
+  //   path: "/confirm",
+  //   element: <CounterLarge />,
+  // },
+  // {
+  //   path: "/countdown",
+  //   element: <RemainingTime />,
+  // },
   {
     path: "/category",
     element: <Category />,
