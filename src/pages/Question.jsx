@@ -35,13 +35,13 @@ import Image from "react-bootstrap/Image";
 let noOfQuestion = 20;
 function generateUniqueRandomArray(category) {
   const uniqueRandomArray = [];
-  let j = 50;
+  let j = generalData.length;
   if (category == "general") {
-    j = 116;
+    j = generalData.length;
   } else if (category == "computer") {
-    j = 91;
+    j = computerData.length;
   } else {
-    j = 42;
+    j = generalData.length;
   }
 
   while (uniqueRandomArray.length < noOfQuestion) {
@@ -51,6 +51,8 @@ function generateUniqueRandomArray(category) {
       uniqueRandomArray.push(randomNumber);
     }
   }
+
+  // console.log("length : " + uniqueRandomArray.length);
 
   return uniqueRandomArray;
 }
@@ -65,6 +67,12 @@ function Question() {
 
   const [currentId, setCurrentId] = useState(0);
   const [idArray, setIdArray] = useState(generateUniqueRandomArray(category));
+  // const [idArray, setIdArray] = useState(
+  //   Array.from({ length: noOfQuestion - 1 }, (_, index) => index)
+  // );
+
+  // const [idArray, setIdArray] = useState([113, 114, 115]);
+
   // console.log(idArray);
   const [data, setData] = useState();
   const [timeup, setTimeup] = useState(false);
@@ -114,7 +122,7 @@ function Question() {
     // push both array
     console.log(_selectedAns);
 
-    if (_selectedAns == jsonData[idArray[currentId]].rightAns) {
+    if (_selectedAns.trim() == jsonData[idArray[currentId]].rightAns.trim()) {
       setScore(score + 1);
     }
 
@@ -126,6 +134,8 @@ function Question() {
     }
 
     setRightAns((prev) => [...prev, jsonData[idArray[currentId]].rightAns]);
+
+    // console.log(currentId);
 
     if (currentId === noOfQuestion - 1) {
       // alert("Congratulation! You have completed the test");

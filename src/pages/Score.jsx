@@ -43,6 +43,7 @@ function Score() {
   const [selectedAns, setSelectedAns] = useState(
     JSON.parse(localStorage.getItem("selectedAns"))
   );
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     if (rightAns.length == 0) {
@@ -70,7 +71,11 @@ function Score() {
     // navigate("/");
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (score == 0) {
+      navigate("/");
+    }
+  }, []);
 
   useEffect(() => {
     window.history.pushState(null, null, document.URL);
@@ -79,8 +84,22 @@ function Score() {
     });
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setImagesLoaded(true);
+    }, 2000);
+  }, []);
+
   if (rightAns.length == 0) {
     return <></>;
+  }
+
+  if (imagesLoaded == false) {
+    return (
+      <div className=" flex h-screen w-screen items-center justify-center text-[#7958AF] ">
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
   return (
@@ -102,11 +121,11 @@ function Score() {
         <img src={congrats} className=" w-10/12 lg:w-2/3 " />
 
         <div className=" w-3/6  ">
-          {((score / 20) * 100).toFixed(2) > 2 ? (
+          {((score / 20) * 100).toFixed(2) < 20 ? (
             <img src={stars1} className=" h-full " />
-          ) : ((score / 20) * 100).toFixed(2) > 4 ? (
+          ) : ((score / 20) * 100).toFixed(2) < 100 ? (
             <img src={stars2} className=" h-full " />
-          ) : ((score / 20) * 100).toFixed(2) > 9 ? (
+          ) : ((score / 20) * 100).toFixed(2) == 100 ? (
             <img src={stars3} className=" h-full " />
           ) : (
             <img src={stars0} className=" h-full " />
