@@ -40,12 +40,12 @@ function Category() {
             }}
             title="General"
           />
-          <Button4
+          {/* <Button4
             onFunction={() => {
               onSubmit("iqtest");
             }}
             title={"Education"}
-          />
+          /> */}
 
           <Button4
             onFunction={() => {
