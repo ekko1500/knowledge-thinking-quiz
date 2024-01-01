@@ -207,7 +207,7 @@ function Question() {
   return (
     <div className="flex flex-col  items-center justify-center p-[1%]">
       {/*<<<<<<<<<< score and time top */}
-      <div className=" flex flex-col  w-[95%] lg:w-1/2 ">
+      <div className="mt-[10px] flex flex-col  w-[95%] lg:w-1/2 ">
         <div className=" flex items-center justify-between  ">
           <div className=" flex h-[50px] w-[200px] items-center justify-center bg-white  ">
             {/* <img src={remainingTime} className=" h-[7rem]" /> */}
@@ -222,8 +222,8 @@ function Question() {
             </div>
           </div>
         </div>
-        <br />
-        <div className=" flex h-[20px]">
+
+        <div className=" mt-[10px] lg:mt-[30px] flex h-[20px]">
           <Progress value={(seconds / initialSeconds) * 100} coloxr="indigo" />
         </div>
       </div>
@@ -267,9 +267,8 @@ function Question() {
           ))}
         </div>
       </div>
-      <br />
-      <br />
-      <div className=" flex w-[95%] lg:w-1/2  h-[50px] items-center ">
+
+      <div className=" my-[20px] lg:my-[40px] flex w-[95%] lg:w-1/2  h-[50px] items-center ">
         <div
           onClick={() => onBack()}
           className=" cursor-pointer flex w-[150px] h-[50px] bg-white  items-center justify-center "

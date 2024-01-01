@@ -131,9 +131,8 @@ function Score() {
           {((score / 20) * 100).toFixed(2)}%
         </h1>
 
-        <br />
         {/* button bar */}
-        <div className=" flex items-center justify-between w-[90%] lg:w-[70%] z-40 ">
+        <div className="my-[20px] lg:my-[40px] flex items-center justify-between w-[90%] lg:w-[70%] z-40 ">
           {keys.map((key, index) => (
             // <div
             //   key={index}
