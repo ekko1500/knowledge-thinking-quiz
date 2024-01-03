@@ -121,7 +121,7 @@ function Score() {
         <img src={congrats} className=" w-10/12 lg:w-2/3 " />
 
         <div className=" w-3/6  ">
-          {((score / 20) * 100).toFixed(2) < 20 ? (
+          {((score / 20) * 100).toFixed(2) < 50 ? (
             <img src={stars1} className=" h-full " />
           ) : ((score / 20) * 100).toFixed(2) < 100 ? (
             <img src={stars2} className=" h-full " />
